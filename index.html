@@ -6,8 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dragon Store</title>
+  <!-- external css -->
   <link rel="stylesheet" href="./css/style.css"/>
-  <!-- Latest compiled and minified CSS -->
+  <!-- bootstrap styles -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
   <!-- google Montserrat  font  -->
@@ -16,37 +17,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
 </head>
 
-<body>
+<body class="bg-light">
   <header>
+    <!-- name -->
     <h1 class="fw-bold text-center mt-5 mb-3">Dragon <span class="text-danger">STORE</span></h1>
   </header>
 
   <main class="main">
-
+    <!-- input field & button -->
     <div class="container">
       <div class="input-group mb-3">
-        <input id="input-field" type="text" class="form-control">
-        <button id="search-btn" onclick="loadProducts()" class="btn btn-danger" type="button">Button</button>
+        <input id="input-field" type="text" class="form-control" placeholder="Search your products">
+        <button id="search-btn" onclick="loadProducts()" class="btn btn-danger" type="button">Search</button>
       </div>
     </div>
-
-    <!-- <div class="search-field">
-      <div class="search-box">
-        <input id="input-field" class="search-field" type="text" />
-        <button type="button" class="btn btn-danger search-button" data-toggle="button" aria-pressed="false"
-          autocomplete="off" id="search-btn" onclick="loadProducts()">
-          Search
-        </button>
-      </div>
-    </div> -->
-
-    
+  
+    <!-- display all products -->
     <div class="row">
       <div class="col-md-9 col-lg-9 col-sm-7">
         <div id="all-products" class="">
         </div>
       </div>
       
+      <!-- products cart -->
       <div class="col-md-3 col-lg-3 col-sm-5 cart-main">
         <div class="cart" id="my-cart">
           <table class="table">
@@ -62,7 +55,7 @@
             <tbody>
               <tr>
                 <th>Total Added-Products:</th>
-                <td><span id="total-Products">0</span></td>
+                <td><span id="total-Products">0</span> Items</td>
                 <td></td>
                 <td></td>
               </tr>
@@ -85,21 +78,23 @@
                 <td></td>
               </tr>
               <tr>
-                <th scope="row">Total</th>
+                <th scope="row">Total:</th>
                 <td colspan="2">$ <span id="total">0</span></td>
                 <td></td>
               </tr>
             </tbody>
           </table>
           <div class="parces text-center">
-            <button class="btn btn-primary text-center">Buy Now</button>
+            <button class="btn btn-warning text-center">Buy Now</button>
           </div>
         </div>
       </div>
+      
     </div>
   </main>
-  <footer></footer>
-
+  
+  <!-- font awesome link -->
+  <script src="https://kit.fontawesome.com/ed28e7dd65.js" crossorigin="anonymous"></script>
   <!-- add javascript  file  -->
   <script src="./js/app.js"></script>
 </body>

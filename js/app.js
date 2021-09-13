@@ -2,7 +2,7 @@
 const loadProducts = () => {
   const searchInput = document.getElementById('input-field');
   const searhText = searchInput.value;
-  fetch(`https://raw.githubusercontent.com/ProgrammingHero1/ranga-store-api/main/ranga-api.json?fbclid=${searhText}`)
+  fetch(`https://raw.githubusercontent.com/ProgrammingHero1/ranga-store-api/main/ranga-api.json?${searhText}`)
   .then(res => res.json())
   .then(data => showProducts(data));
 };
@@ -21,7 +21,9 @@ const showProducts = (products) => {
       <div >
         <h3>${product.title}</h3>
         <p>Category: ${product.category}</p>
-        <h2>Price: $ ${product.price}</h2>
+        <small class="text-warning">Rating: ${product.rating.rate}</small>
+        <p class="text-secondary"><i class="fas fa-user"></i> ${product.rating.count} total</p>
+        <h2>Price: $${product.price}</h2>
         <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
         <button id="details-btn" class="btn btn-danger">Details</button>
       </div>
